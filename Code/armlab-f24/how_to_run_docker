@@ -1,0 +1,19 @@
+To pull an image from docker hub use this command
+sudo docker pull rajatsurya/ros:ros2_humble_tmp2
+
+once pulled create your own container using the command
+sudo docker run -it --net=host --env="DISPLAY=$DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name=ros2_humble_tmp(custom name for the container) (image_name) /bin/bash image name for ros2 humble is osrf/ros:humble-desktop-full 
+
+to save as a new image run the command
+sudo docker commit <container_name_or_id> <new_image_name>:<tag>
+
+
+
+to find existing docker containers run the command
+sudo docker ps -a
+
+
+To run an Existing container 
+first command sudo docker start ros2_humble_tmp 
+second command sudo docker exec -it ros2_humble_tmp bash (container name)
+
